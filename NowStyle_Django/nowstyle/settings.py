@@ -56,7 +56,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'nowstyle.wsgi.application'
 
 
-# Configuración de Base de Datos (MySQL)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
