@@ -1,0 +1,34 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>PERSONALIZA TU <span style="color:#dc2626">ESTAMPADO</span></h1>
+<p class="muted">Visualizador 3D de las prendas originales. Arrastra para rotar y utiliza la rueda para acercar o alejar.</p>
+
+<div class="grid">
+    <div class="formbox">
+        <label>Modelo</label>
+        <select class="field" id="modelChoice">
+            <option value="camiseta_base.glb">Camiseta</option>
+            <option value="hoodies_base.glb">Hoodie</option>
+            <option value="pantalon_base.glb">Pantalón</option>
+        </select>
+        
+        <label>Color</label>
+        <input class="field" type="color" id="garmentColor" value="#222222">
+        
+        <label>Imagen de estampado</label>
+        <input class="field" type="file" id="designFile" accept="image/*">
+        
+        <p class="muted">La vista 3D conserva los modelos GLB originales. La aplicación de textura personalizada sobre el modelo y el guardado de la configuración de compra requieren completar el editor de estampados.</p>
+    </div>
+    
+    <div class="model-view">
+        <canvas id="model3d"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{% static 'js/viewer3d.js' %}"></script>
+{% endblock %}
